@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #2a2d36;
+            color: white;
+        }
+        /* .box{
+            background: #328780;
+            width: 400px;
+            height: 400px;
+        } */
+        /* @media (max-width: 200px) and (min-width: 100px) {
+            .box{
+                background-color:antiquewhite;
+            }
+        } */
+    
+        
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: monospace;
+            padding: 10px 20px;
+            background-color: #4d2323;
+        }
+        .logo{
+            height: 35px;
+            width: 32px;
+            background-color: aquamarine;
+            border-radius: 50%;
+        }
+        .nav1{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .nav2 ul{
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        .nav2 li{
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .nav2 li:hover {
+            color: teal;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .menu-icon div{
+            width: 25px;
+            height: 3px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 2px;
+        }
+
+    @media (max-width:421px) {
+        .nav2 ul{
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #4d2323;
+            padding: 1px;
+            border-radius: 20px;
+            width: 100px;
+            text-align: center;
+
+        }
+        
+        .nav2 ul.active {
+            display: flex;
+        }
+        .menu-icon {
+            display: flex;
+        }
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="box"></div> -->
+
+    <nav class="nav">
+        <div class="nav1">
+            <h2 class="logo"></h2>
+            <h3>Rushi Gherade</h3>
+        </div>
+         
+        <div class="menu-icon" id="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav2">
+            <ul id="menu-list">
+                <li class="li1">Home</li>
+                <li class="li2">Resume</li>
+                <li class="li3">Contact</li>
+                <li class="li4">Project</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+ <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const menuList = document.getElementById('menu-list');
+
+    menuIcon.addEventListener('click', () => {
+      menuList.classList.toggle('active');
+    });
+  </script>
+</html>
